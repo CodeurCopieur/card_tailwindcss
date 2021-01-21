@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title TailWindSetup
+
+    link(rel="stylesheet", href="output.css")
+  body
+
+    .text-center.max-w-7xl.mx-auto.py-20.px-4(class="sm:px-6 lg:px-8")
+      h1.text-5xl.font-extrabold.text-gray-900 Gamme de prix
+      hr.mt-5.mx-auto(class="w-1/4")
+      p.mt-5.text-xl.text-black-900 Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis impedit laboriosam quo doloremque eligendi incidunt minima eius, veniam facilis accusamus!
+
+      .mt-8.flex.flex-wrap.justify-center.items-center.flex-col.space-x-0(class="md:space-x-10 md:flex-row")
+
+        each val, key in [{titre: 'Basique', text: 'Comblez vos besoins basiques', prix: '12€', bouton: 'Acheter le plan basique'}, {titre: 'Freelance', text: 'Passez au niveau supérieur', prix: '29€', bouton: 'Acheter le plan Freelance'}, {titre: 'Professionnel', text: 'Le pack complet', prix: '99€', bouton: 'Acheter le plan Pro'}]
+
+          .bg-white.flex.flex-col.min-h-card.max-w-sm.border.border-gray-200.rounded-lg.mt-5.text-left
+
+            .px-6.pt-6
+              h2.text-2xl.font-bold.text-gray-900= val.titre
+              p.text-md.text-gray-800= val.text
+              p.mt-2
+                span.text-4xl.font-extrabold.text-gray-900= val.prix
+                span.font-medium.text-black-800 /mois
+              h3.text-xs.font-medium.text-gray-900.tracking-wide.uppercase Inclus dans ce plan :
+
+            ul.mt-6.px-6.flex.flex-grow.flex-shrink-0.flex-col
+              li.flex.space-x-3.py-2
+                img(src="./checked.svg", alt="check icone").flex-shrink-0.h-5.w-5
+                span.text-sm.text-gray-800 Lorem ipsum dolor sit amet.
+
+              li.flex.space-x-3.py-2
+                img(src="./checked.svg", alt="check icone").flex-shrink-0.h-5.w-5
+                span.text-sm.text-gray-800 Lorem ipsum dolor sit amet.
+
+              li.flex.space-x-3.py-2
+                img(src="./checked.svg", alt="check icone").flex-shrink-0.h-5.w-5
+                span.text-sm.text-gray-800 Lorem ipsum dolor sit amet.
+
+              li.flex.space-x-3.py-2.mt-auto
+                a(href="").block.w-full.bg-gray-800.border.border-gray-800.rounded-md.py-2.font-semibold.text-white.text-center(class="hover:bg-gray-900")= val.bouton
